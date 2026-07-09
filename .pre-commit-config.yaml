@@ -14,7 +14,7 @@ repos:
     hooks:
       - id: no-internal-refs
         name: Block internal infrastructure references
-        entry: bash -c 'if grep -rn --include="*.py" --include="*.md" --include="*.yaml" --include="*.yml" --include="*.adoc" --include="*.tsx" --include="*.ts" --include="*.json" -i -E "(example-domain|racmaas|deepfield-multimodal|maintainer@example|deepfield-multimodal|litellm-proxy|example\.io)" "$@" 2>/dev/null; then echo ""; echo "ERROR: Internal infrastructure references detected. Remove before committing."; exit 1; fi'
+        entry: bash -c 'if grep -rn --include="*.py" --include="*.md" --include="*.yaml" --include="*.yml" --include="*.adoc" --include="*.tsx" --include="*.ts" --include="*.json" -i -E "(fm2aihpc[s]ed|racm[a]as|jkersh[a]wrh|jkershaw@red[h]at|red[h]at-gpte|maas-r[h]dp|red[h]atworkshops\.io)" "$@" 2>/dev/null; then echo ""; echo "ERROR: Internal infrastructure references detected. Remove before committing."; exit 1; fi'
         language: system
         types: [file]
         pass_filenames: true
