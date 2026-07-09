@@ -18,4 +18,4 @@
 - [ ] Wire frontend to serve from backend (static files + SPA fallback)
 - [ ] Add PostgreSQL persistence testing with a real DB
 - [ ] Containerize (Containerfile/podman-compose)
-- [ ] Port to rhpds if needed
+- [ ] Port to lab platform if needed

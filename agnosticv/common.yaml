@@ -8,25 +8,25 @@ tag: main
 
 requirements_content:
   collections:
-    - name: https://github.com/agnosticd/namespaced_workloads.git
+    - name: https://github.com/example/namespaced_workloads.git
       type: git
       version: "{{ tag }}"
-    - name: https://github.com/rhpds/rhpds.litellm_virtual_keys.git
+    - name: https://github.com/example/example.litellm_virtual_keys.git
       type: git
       version: "{{ tag }}"
-    - name: https://github.com/agnosticd/ai_quickstarts.git
+    - name: https://github.com/example/ai_quickstarts.git
       type: git
       version: "{{ tag }}"
-    - name: https://github.com/agnosticd/showroom.git
+    - name: https://github.com/example/showroom.git
       type: git
       version: v1.6.8
 
 workloads:
-  - agnosticd.namespaced_workloads.ocp4_workload_tenant_keycloak_user
-  - agnosticd.namespaced_workloads.ocp4_workload_tenant_namespace
-  - rhpds.litellm_virtual_keys.ocp4_workload_litellm_virtual_keys
-  - agnosticd.ai_quickstarts.quickstart_deploy_via_make
-  - agnosticd.showroom.ocp4_workload_showroom
+  - example.namespaced_workloads.ocp4_workload_tenant_keycloak_user
+  - example.namespaced_workloads.ocp4_workload_tenant_namespace
+  - example.litellm_virtual_keys.ocp4_workload_litellm_virtual_keys
+  - example.ai_quickstarts.quickstart_deploy_via_make
+  - example.showroom.ocp4_workload_showroom
 
 # --- User provisioning ---
 common_password: "{{ lookup('password', output_dir ~ '/common_password', length=12, chars=['ascii_letters', 'digits']) }}"
@@ -83,7 +83,7 @@ ai_model_requirements:
       expected_total_users: 100
 
 # --- Application deployment ---
-quickstart_deploy_via_make_repo_url: https://github.com/rhpds/deepfield-multimodal
+quickstart_deploy_via_make_repo_url: https://github.com/example/deepfield-multimodal
 quickstart_deploy_via_make_scm_ref: main
 quickstart_deploy_via_make_directory: deploy
 quickstart_deploy_via_make_params:
@@ -94,7 +94,7 @@ quickstart_deploy_via_make_uninstall_params:
   NAMESPACE: "user-{{ guid }}-deepfield-multimodal"
 
 # --- Showroom ---
-ocp4_workload_showroom_content_url: https://github.com/rhpds/deepfield-multimodal
+ocp4_workload_showroom_content_url: https://github.com/example/deepfield-multimodal
 ocp4_workload_showroom_content_ref: main
 ocp4_workload_showroom_content_dir: docs
 ocp4_workload_showroom_user: "user-{{ guid }}"
@@ -109,18 +109,18 @@ ocp4_workload_showroom_user_data:
   deepfield_url: "https://deepfield-multimodal-user-{{ guid }}-deepfield-multimodal.{{ sandbox_openshift_ingress_domain }}"
 
 # --- Platform ---
-requester_email: "rhdp-{{ guid }}@demo.redhat.com"
+requester_email: "lab-{{ guid }}@example.com"
 catalog_item_name: ai-quickstarts.ai-qs-deepfield-multimodal-tenant.event
 openshift_api_url: "{{ sandbox_openshift_api_url }}"
-openshift_cluster_admin_token: "{{ cluster_admin_agnosticd_sa_token }}"
+openshift_cluster_admin_token: "{{ cluster_admin_sa_token }}"
 
 # --- Metadata ---
 __meta__:
   access_control:
     allow_groups:
       - lab-access-group
-      - email-domain.intel.com
-  asset_uuid: 070b5c12-e631-4da9-8bc5-766a857f5213
+      - email-domain.example.com
+  asset_uuid: 00000000-0000-0000-0000-000000000000
   owners:
     maintainer:
       - name: Maintainer
@@ -145,13 +145,13 @@ __meta__:
       Provider: RHDP
       Partner: Intel
     reportingLabels:
-      primaryBU: Hybrid_Platforms
+      primaryBU: Engineering
     parameters: []
   deployer:
-    scm_url: https://github.com/agnosticd/agnosticd-v2
+    scm_url: https://github.com/example/example-v2
     scm_ref: main
     execution_environment:
-      image: "quay.io/agnosticd/ee-multicloud:chained-2026-02-23"
+      image: "quay.io/example/ee-multicloud:chained-2026-02-23"
       pull: missing
     actions:
       destroy:

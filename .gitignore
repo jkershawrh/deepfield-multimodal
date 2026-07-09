@@ -11,3 +11,4 @@ venv/
 *.sqlite
 .DS_Store
 benchmark-results/
+.claude/settings.local.json
