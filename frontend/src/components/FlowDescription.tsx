@@ -17,7 +17,7 @@ export function FlowDescription({ text, alwaysOpen = false }: Props) {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         style={{
-          padding: '14px 18px', marginBottom: 16,
+          padding: '14px 18px', marginBottom: 10,
           borderLeft: '3px solid var(--rh-blue)',
           background: 'var(--rh-blue-dim)',
           borderRadius: '0 8px 8px 0',
@@ -33,7 +33,7 @@ export function FlowDescription({ text, alwaysOpen = false }: Props) {
   }
 
   return (
-    <div style={{ marginBottom: 12 }}>
+    <div style={{ marginBottom: 8 }}>
       <button onClick={() => setOpen(!open)} style={{
         background: 'none', border: 'none', color: 'var(--rh-blue)',
         fontSize: 12, fontWeight: 600, cursor: 'pointer', padding: 0,

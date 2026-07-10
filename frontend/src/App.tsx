@@ -823,10 +823,10 @@ export default function App() {
               background: i === actIndex ? 'var(--rh-red)' : i < actIndex ? 'var(--rh-green)' : 'var(--border)' }} />
         ))}
       </div>
-      <div style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: '32px 24px', width: '100%' }}>
+      <div style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: '20px 24px', width: '100%' }}>
         <AnimatePresence mode="wait">
           <motion.div key={currentAct} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.3 }}>
-            <div style={{ marginBottom: 32 }}>
+            <div style={{ marginBottom: 16 }}>
               <div style={{ fontSize: 12, color: 'var(--rh-red)', fontFamily: 'Red Hat Mono, monospace', fontWeight: 800, marginBottom: 4 }}>ACT {actIndex + 1} OF {manualActs.length}</div>
               <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>{meta.title}</h2>
               <p style={{ fontSize: 16, color: 'var(--text-dim)', margin: 0 }}>{meta.subtitle}</p>

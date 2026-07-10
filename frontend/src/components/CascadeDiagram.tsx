@@ -21,9 +21,9 @@ export function CascadeDiagram({ records, activeStage }: Props) {
     <div style={{ background: 'var(--surface-1)', border: '1px solid var(--border)', borderRadius: 10, padding: 20, marginBottom: 16 }}>
       <svg viewBox="0 0 700 310" style={{ width: '100%', height: 'auto' }}>
         {/* Flow arrows */}
-        <motion.line x1="350" y1="70" x2="350" y2="120" stroke="var(--border)" strokeWidth="2" strokeDasharray="4 4"
+        <motion.line x1="350" y1={100} x2="350" y2={140} stroke="var(--border)" strokeWidth="2" strokeDasharray="4 4"
           initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.5, duration: 0.5 }} />
-        <motion.line x1="350" y1="170" x2="350" y2="220" stroke="var(--border)" strokeWidth="2" strokeDasharray="4 4"
+        <motion.line x1="350" y1={200} x2="350" y2={240} stroke="var(--border)" strokeWidth="2" strokeDasharray="4 4"
           initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 1.0, duration: 0.5 }} />
 
         {Object.entries(TIER_META).map(([tier, meta]) => {

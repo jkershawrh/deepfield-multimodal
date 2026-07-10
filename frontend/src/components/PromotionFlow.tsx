@@ -32,7 +32,7 @@ function TierNodeInner({ data }: NodeProps & { data: TierNodeData }) {
       minWidth: 120,
       textAlign: 'center',
     }}>
-      <Handle type="target" position={Position.Left} style={{ background: color, width: 6, height: 6, border: 'none' }} />
+      <Handle type="target" position={Position.Left} style={{ background: 'transparent', width: 1, height: 1, border: 'none' }} />
       <div style={{ fontSize: 13, fontWeight: 700, color, fontFamily: 'Red Hat Display, sans-serif' }}>
         {label}
       </div>
@@ -42,7 +42,7 @@ function TierNodeInner({ data }: NodeProps & { data: TierNodeData }) {
       <div style={{ fontSize: 9, color: 'var(--text-disabled)', fontFamily: 'Red Hat Mono, monospace' }}>
         {threshold}
       </div>
-      <Handle type="source" position={Position.Right} style={{ background: color, width: 6, height: 6, border: 'none' }} />
+      <Handle type="source" position={Position.Right} style={{ background: 'transparent', width: 1, height: 1, border: 'none' }} />
     </div>
   );
 }

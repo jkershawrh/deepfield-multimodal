@@ -27,7 +27,7 @@ export function StepCard({ num, title, status, onRun, buttonLabel, children }: P
       transition={{ type: 'spring', stiffness: 400, damping: 25 }}
       style={{
         background: 'var(--surface-1)', border: '1px solid var(--border)',
-        borderRadius: 10, padding: 20, marginBottom: 12,
+        borderRadius: 10, padding: 14, marginBottom: 8,
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -66,7 +66,7 @@ export function StepCard({ num, title, status, onRun, buttonLabel, children }: P
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            style={{ marginTop: 16 }}
+            style={{ marginTop: 10 }}
           >
             {children}
           </motion.div>

@@ -29,7 +29,7 @@ function AgentTierNodeInner({ data }: NodeProps & { data: AgentTierData }) {
       minWidth: 520,
       transition: 'border-color 0.3s, background 0.3s',
     }}>
-      <Handle type="target" position={Position.Top} style={{ background: color, width: 8, height: 8, border: 'none' }} />
+      <Handle type="target" position={Position.Top} style={{ background: 'transparent', width: 1, height: 1, border: 'none' }} />
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: agents.length > 0 ? 10 : 0 }}>
         <span style={{ fontSize: 13, fontWeight: 700, color, fontFamily: 'Red Hat Display, sans-serif' }}>
@@ -68,7 +68,7 @@ function AgentTierNodeInner({ data }: NodeProps & { data: AgentTierData }) {
         )}
       </AnimatePresence>
 
-      <Handle type="source" position={Position.Bottom} style={{ background: color, width: 8, height: 8, border: 'none' }} />
+      <Handle type="source" position={Position.Bottom} style={{ background: 'transparent', width: 1, height: 1, border: 'none' }} />
     </div>
   );
 }
