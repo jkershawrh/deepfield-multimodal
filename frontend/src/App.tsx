@@ -12,6 +12,7 @@ import { DetailModal, KeyValueTable, ComparisonTable } from './components/Detail
 import { FlowDescription } from './components/FlowDescription';
 import { InfraPanel } from './components/InfraPanel';
 import { BootstrapLab } from './components/BootstrapLab';
+import PlatformDashboard from './components/PlatformDashboard';
 import { api } from './api/client';
 import type { ApiCall } from './api/client';
 import { useDemoStore } from './stores/useDemoStore';
@@ -380,6 +381,11 @@ export default function App() {
     return <BootstrapLab onExit={() => setMode('auto')} />;
   }
 
+  // --- Platform mode ---
+  if (mode === 'platform') {
+    return <PlatformDashboard onExit={() => setMode('auto')} />;
+  }
+
   // --- Auto mode ---
   if (mode === 'auto') {
     const isRunning = demoState.status === 'running' || demoState.status === 'starting';
@@ -696,10 +702,16 @@ export default function App() {
                   <p style={{ fontSize: 12, color: 'var(--text-disabled)', marginTop: 12, fontFamily: 'Red Hat Mono, monospace' }}>
                     ~210 MB · Intel Xeon · Red Hat OpenShift · 30 seconds to your first demo
                   </p>
-                  <button onClick={() => setMode('lab')}
-                    style={{ marginTop: 16, background: 'var(--rh-red)', border: 'none', color: '#fff', padding: '10px 28px', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
-                    Try it with your data →
-                  </button>
+                  <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 16 }}>
+                    <button onClick={() => setMode('lab')}
+                      style={{ background: 'var(--rh-red)', border: 'none', color: '#fff', padding: '10px 28px', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+                      Try it with your data
+                    </button>
+                    <button onClick={() => setMode('platform')}
+                      style={{ background: 'var(--rh-teal)', border: 'none', color: '#fff', padding: '10px 28px', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+                      Platform
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
